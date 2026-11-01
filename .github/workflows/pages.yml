@@ -29,30 +29,6 @@ jobs:
         with:
           enablement: true
 
-      - name: Set custom domain
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          api="https://api.github.com/repos/${{ github.repository }}/pages"
-          auth=(-H "Authorization: Bearer ${GH_TOKEN}" -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28")
-          try() {
-            curl -sS -o /tmp/pages-update.json -w "%{http_code}" -X PUT "${auth[@]}" "$api" -d "$1"
-          }
-          code="$(try '{"cname":"mymemorybox.com.au","https_enforced":true}')"
-          echo "enforce-https status ${code}"
-          cat /tmp/pages-update.json
-          echo
-          if [ "$code" != "200" ] && [ "$code" != "201" ]; then
-            code="$(try '{"cname":"mymemorybox.com.au","https_enforced":false}')"
-            echo "set-domain status ${code}"
-            cat /tmp/pages-update.json
-            echo
-          fi
-          if [ "$code" != "200" ] && [ "$code" != "201" ]; then
-            exit 1
-          fi
-
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
