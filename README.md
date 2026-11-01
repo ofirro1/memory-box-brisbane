@@ -1,6 +1,6 @@
 # Memory Box Brisbane
 
-Static website for [Memory Box Brisbane](https://ofirro1.github.io/memory-box-brisbane/), a home photo-digitisation service in Brisbane's west. It is plain HTML, CSS, and JavaScript. Nothing here depends on Base44 or a server.
+Static website for [Memory Box Brisbane](https://mymemorybox.com.au/), a home photo-digitisation service in Brisbane's west. It is plain HTML, CSS, and JavaScript. Nothing here depends on Base44 or a server.
 
 ## Pages
 
@@ -32,16 +32,22 @@ Then open http://127.0.0.1:8765/. Use a local server so the icon sprite loads. O
 
 ## GitHub Pages
 
-The site is meant to be served from the root of `main`.
+The site is published from the root of `main` by `.github/workflows/pages.yml` (source: GitHub Actions).
 
-1. In the repository, open **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. The workflow in `.github/workflows/pages.yml` publishes the repository root on every push to `main`.
+Custom domain: **https://mymemorybox.com.au/** (`CNAME` in the repo root). The project URL https://ofirro1.github.io/memory-box-brisbane/ keeps working because styles, images, and page links are relative.
 
-If you would rather not use Actions, set **Source** to **Deploy from a branch**, branch `main`, folder `/ (root)`. A `.nojekyll` file is included so Pages serves the files as-is.
+At the DNS host (GoDaddy), point the apex at GitHub Pages with these records and remove the old GoDaddy A records (`13.248.243.5` and `76.223.105.230`) and the `www` CNAME that points at the apex:
 
-After it is enabled, the site is at:
+| Type | Host | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` |
+| AAAA | `@` | `2606:50c0:8001::153` |
+| AAAA | `@` | `2606:50c0:8002::153` |
+| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `ofirro1.github.io` |
 
-**https://ofirro1.github.io/memory-box-brisbane/**
-
-No custom domain is configured.
+`www.mymemorybox.com.au` then redirects to the apex. Enforce HTTPS after those records resolve to GitHub.
