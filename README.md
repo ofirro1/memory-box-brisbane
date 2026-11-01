@@ -17,7 +17,7 @@ Login, registration, and order tracking from the old app are not included.
 
 - Copy and section order live in `index.html`, `quote/index.html`, `terms/index.html`, and `privacy/index.html`.
 - Colours, type, and spacing are in `css/styles.css`. Headings use [Fraunces](https://fonts.google.com/specimen/Fraunces); body text uses [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans).
-- Photos are in `images/`. Replace `lia.jpg` or `teammate.jpg` when real portraits are ready. The second team card is still the live-site placeholder ("Your name here").
+- Photos are in `images/`. Founder portraits are `lia.jpg` and `leigh.jpg`.
 - Icons are in `icons.svg`.
 - The quote calculator is `js/quote.js`. It uses the same rate table as the previous site and keeps the result in the browser only. Email or call so a deposit can be matched — there is no database behind this page.
 - Contact details used throughout: memoryboxbrisbane@gmail.com and 0431 444 241.
