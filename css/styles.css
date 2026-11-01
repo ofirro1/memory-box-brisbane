@@ -43,7 +43,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: hsl(var(--background));
+  background: #fcfaf6;
   color: hsl(var(--foreground));
   font-family: var(--font-body);
   font-size: 1rem;
@@ -137,7 +137,7 @@ p {
   top: 0;
   z-index: 40;
   border-bottom: 1px solid hsl(var(--border) / 0.6);
-  background: hsl(var(--background) / 0.8);
+  background: rgba(252, 250, 246, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -166,8 +166,8 @@ p {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 999px;
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background: #f59e0b;
+  color: #1a1a1a;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -224,7 +224,7 @@ p {
 .mobile-nav {
   display: none;
   border-top: 1px solid hsl(var(--border) / 0.6);
-  background: hsl(var(--background));
+  background: #fcfaf6;
   padding: 1rem 1.25rem 1.15rem;
 }
 
@@ -291,12 +291,12 @@ p {
 }
 
 .btn-primary {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background: #f59e0b;
+  color: #1a1a1a;
 }
 
 .btn-primary:hover {
-  background: hsl(var(--primary) / 0.9);
+  background: #e8940a;
 }
 
 .btn-ghost {
@@ -332,6 +332,12 @@ p {
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.btn-primary:disabled {
+  opacity: 1;
+  background: #f6d48b;
+  color: rgba(26, 26, 26, 0.55);
 }
 
 .header-cta {
@@ -389,6 +395,17 @@ p {
 
 .hero .inline-actions {
   margin-top: 2rem;
+}
+
+.hero .btn-lg,
+.contact .btn-lg {
+  height: 2.75rem;
+  padding: 0 1.35rem;
+  font-size: 1rem;
+}
+
+.contact .section-title {
+  max-width: 13.15em;
 }
 
 .pill {
@@ -485,8 +502,8 @@ p {
   height: 2.75rem;
   flex: none;
   border-radius: 999px;
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background: #f59e0b;
+  color: #1a1a1a;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -506,7 +523,7 @@ p {
 /* Local + about share the warm band */
 
 .band {
-  background: color-mix(in hsl, hsl(var(--secondary)) 40%, hsl(var(--background)));
+  background: #f7f5f0;
   padding: 4rem 0;
 }
 
@@ -758,7 +775,7 @@ p {
 
 .site-footer {
   border-top: 1px solid hsl(var(--border) / 0.6);
-  background: hsl(var(--background));
+  background: #fcfaf6;
   padding: 2.5rem 0 1.5rem;
 }
 
@@ -809,6 +826,13 @@ p {
 
 .brand.footer-brand {
   font-size: 1rem;
+  align-items: center;
+  line-height: 1.15;
+}
+
+.brand-name {
+  display: block;
+  max-width: 6.85rem;
 }
 
 /* Mobile call bar */
@@ -820,7 +844,7 @@ p {
   bottom: 0;
   z-index: 30;
   border-top: 1px solid hsl(var(--border) / 0.6);
-  background: hsl(var(--background) / 0.85);
+  background: rgba(252, 250, 246, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 0.75rem 1rem;
@@ -879,6 +903,7 @@ main {
   font-weight: 600;
   font-size: 2.25rem;
   letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 .updated {
@@ -915,7 +940,13 @@ main {
 }
 
 .legal-body a {
-  color: hsl(var(--foreground));
+  color: #e8940a;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.legal-body a:hover {
+  text-decoration: underline;
 }
 
 /* Quote */
@@ -1397,7 +1428,7 @@ main {
   .hero h1 { font-size: 3rem; }
   .section-title { font-size: 2.25rem; }
   .quote-intro h1 { font-size: 2.25rem; }
-  .legal h1 { font-size: 2.5rem; }
+  .legal h1 { font-size: 2.25rem; }
   .header-cta { display: inline-flex; }
   .choices,
   .field-row { grid-template-columns: 1fr 1fr; }
@@ -1414,23 +1445,31 @@ main {
   .hero { padding: 6rem 0; }
   .hero-grid,
   .split,
-  .local-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .local-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .hero h1 { font-size: 3.75rem; }
   .how,
   .contact { padding: 6rem 0; }
   .band { padding: 5rem 0; }
-  .about { padding-bottom: 6rem; }
+  .about { padding: 4rem 0 6rem; }
   .how-photo { order: 1; }
   .how-copy { order: 2; }
   .team { grid-template-columns: 1fr 1fr; }
   .footer-row {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    flex-direction: row;
     align-items: center;
-    gap: 1.25rem 1.75rem;
+    justify-content: space-between;
+    gap: 1.5rem 2rem;
   }
   .footer-links {
-    justify-content: center;
+    max-width: 28rem;
+    justify-content: flex-start;
+  }
+  .follow {
+    max-width: 4.6rem;
+    align-items: center;
+  }
+  .follow span {
+    line-height: 1.2;
   }
   .after-grid { grid-template-columns: 1fr 1fr; }
 }
