@@ -20,7 +20,7 @@ Login, registration, and order tracking from the old app are not included.
 - Photos are in `images/`. Founder portraits are `lia.jpg` and `leigh.jpg`.
 - Icons are in `icons.svg`.
 - The quote calculator is `js/quote.js`. It uses the same rate table as the previous site and keeps the result in the browser only. Email or call so a deposit can be matched — there is no database behind this page.
-- Contact details used throughout: memoryboxbrisbane@gmail.com and 0431 444 241.
+- Contact details used throughout: memoryboxbrisbane@gmail.com and 0411 883 275.
 
 Preview locally from the repository root:
 
