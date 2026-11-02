@@ -163,19 +163,19 @@ p {
 }
 
 .brand-mark {
-  width: 2.25rem;
   height: 2.25rem;
-  border-radius: 999px;
-  background: #f59e0b;
-  color: #1a1a1a;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  width: auto;
+  max-width: none;
+  flex: 0 0 auto;
+  display: block;
+  background: none;
+  border-radius: 0;
+  object-fit: contain;
 }
 
 .brand-mark.sm {
-  width: 2rem;
   height: 2rem;
+  width: auto;
 }
 
 .nav-desktop {
